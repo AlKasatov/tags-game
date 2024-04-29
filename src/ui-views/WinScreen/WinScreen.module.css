@@ -1,0 +1,20 @@
+.winWrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.8);
+}
+.win{
+    font-size: 30px;
+    padding: 40px;
+    border: 4px solid var(--primary);
+    background-color: var(--secondary);
+    color: var(--primary);
+    margin-bottom: 20px;
+}

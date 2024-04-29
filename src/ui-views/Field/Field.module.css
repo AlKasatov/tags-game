@@ -1,0 +1,9 @@
+.wrapper{
+    padding: 20px;
+}
+.field {
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    position: relative;
+}

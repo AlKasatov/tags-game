@@ -1,0 +1,66 @@
+{
+    "env":{
+        "browser":true,
+        "es2021":true
+    },
+    "extends":[
+        "plugin:react/recommended",
+        "airbnb",
+        "eslint:recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
+    ],
+    "parser":"@typescript-eslint/parser",
+    "parserOptions":{
+        "ecmaFeatures":{
+            "jsx":true
+        },
+        "ecmaVersion":"latest",
+        "sourceType":"module"
+    },
+    "plugins":[
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules":{
+        "react/function-component-definition":[
+            2,
+            {
+                "namedComponents":"arrow-function",
+                "unnamedComponents":"arrow-function"
+            }
+        ],
+        "import/prefer-default-export":[
+            0
+        ],
+        "react/jsx-filename-extension":[
+            "error",
+            {
+                "extensions":[
+                    ".tsx",
+                    ".jsx"
+                ]
+            }
+        ],
+        "import/extensions":[
+            "error",
+            {
+                "ts":"never",
+                "tsx":"never",
+                "json":"always"
+            }
+        ],
+        "linebreak-style":[
+            0
+        ],
+        "import/no-unresolved":[
+            0
+        ],
+        "react/require-default-props": "off",
+        "max-len": ["error", { "code": 140 }],
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^arg" }],
+        "jsx-a11y/no-static-element-interactions": [0],
+        "jsx-a11y/click-events-have-key-events":[0],
+        "no-param-reassign": [0]
+    }
+}

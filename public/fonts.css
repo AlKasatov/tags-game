@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Digital';
+    src: local('Digital Thin'), local('DigitalThin'),
+    url('fonts/DigitalThin.woff2') format('woff2'),
+    url('fonts/DigitalThin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}

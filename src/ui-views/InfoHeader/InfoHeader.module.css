@@ -1,0 +1,15 @@
+.infoWrapper{
+    padding: 40px 20px 0;
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+}
+@media screen and (max-width:375px){
+    .infoWrapper{
+        padding: 20px 10px 0;
+    }
+}
