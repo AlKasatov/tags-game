@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const dotenv = require('dotenv');
 
 const production = process.env.NODE_ENV === 'production';
@@ -21,24 +22,24 @@ module.exports = () => {
       path: path.resolve(__dirname, './dist'),
       filename: production ? '[name].[contenthash].js' : '[name].js',
       // https://ui.dev/react-router-cannot-get-url-refresh
-      publicPath: './',
+      publicPath: '',
     },
 
     module: {
       rules: [
-        {
-          // https://chriscourses.com/blog/loading-fonts-webpack
-          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name].[ext]',
-                outputPath: 'fonts/',
-              },
-            },
-          ],
-        },
+        // {
+        //   // https://chriscourses.com/blog/loading-fonts-webpack
+        //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        //   use: [
+        //     {
+        //       loader: 'file-loader',
+        //       options: {
+        //         name: '[name].[ext]',
+        //         outputPath: 'fonts/',
+        //       },
+        //     },
+        //   ],
+        // },
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
@@ -81,6 +82,19 @@ module.exports = () => {
     },
     plugins: [
       new CleanWebpackPlugin(),
+      new CopyWebpackPlugin({
+        patterns: [
+            {
+                from: 'public/fonts', // Папка-источник, откуда копируем
+                to: 'fonts', // Папка назначения, куда копируем
+            },
+            {
+              from: 'public/fonts.css', // Папка-источник, откуда копируем
+              to: 'fonts.css', // Папка назначения, куда копируем
+          },
+
+        ],
+      }),
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         title: 'Webpack & React',

@@ -3,7 +3,7 @@
     height: 25%;
     padding: 4px;
     position: absolute;
-    transition: transform .1s;
+    transition: transform .2s;
     transition-timing-function: ease-out;
     cursor: pointer;
 }
